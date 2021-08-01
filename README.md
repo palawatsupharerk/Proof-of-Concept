@@ -52,7 +52,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
  
 ## How to connect SAS Viya (CAS) with R SWAT
 #### Assumption
-   - Both R (R Computing) and Rstudio is already installed on Client computer
+   - Both R (R Computing) and Rstudio are already installed on Client computer
 #### Procedures
 1. Open RStudio and Install SWAT package
    ```
