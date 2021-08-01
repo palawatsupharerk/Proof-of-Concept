@@ -48,7 +48,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
        ```
        appending
        ```
-       poc = {'ip'      : 'opcgg100000322.service.gocloud.gov.on.ca',
+       poc = {'ip'      : '<SAS Viya hostname>',
               'context' : 'SAS Studio compute context',
               'authkey' : 'viyaKey',
               'encoding': 'utf-8',
@@ -56,13 +56,13 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
        ```
 4. Create Authentication file (_authinfo) in personal home folder on Client computer
    ```
-   viyaKey user palawat.supharerk@ontario.ca password <your password>
+   viyaKey user <you email> password <your password>
    ```
 5. Make a connection to SAS Viya
    - Connect VPN
    - Start JupyterLab using Anaconda Command Prompt, for example if your code located in S: Drive
      ```
-     jupyter lab --notebook-dir S:\Users\DDM\SupharerkP\dBCS
+     jupyter lab --notebook-dir S:\users\foo\bar
      ```
    - Run Python Notebook
 
