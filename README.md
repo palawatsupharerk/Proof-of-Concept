@@ -56,7 +56,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
        ```
 4. Create Authentication file (_authinfo) in personal home folder on Client computer
    ```
-   viyaKey user <you email> password <your password>
+   viyaKey user <your email> password <your password>
    ```
 5. Make a connection to SAS Viya
    - Connect VPN
