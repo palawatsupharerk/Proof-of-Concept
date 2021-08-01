@@ -27,7 +27,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 #### Assumption
    - Anaconda Python is already installed on Client computer
 #### Procedures
-1. Open Anaconda Prompt and Install SASPy package on Client computer while connecting to Internet without OPS VPN activation
+1. Open Anaconda Prompt and Install SASPy package on Client computer while connecting to Internet without VPN connection
 2. Configure SASpy
 3. Create Authentication file
 
@@ -37,13 +37,19 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 #### Procedures
 1. Open Anaconda Prompt and Install SWAT package
    ```
-   conda install -c sasinstitute swat
+   conda install -c sas-institute swat
    ```
-3. Run SAS code to encode your password
+   or if you use pip command
+   ```
+   pip install swat
+   ```
+2. Run SAS code to encode your password
    ```
    PROC PWENCODE IN='<your password>';
    RUN;
    ```
+3. Make a connection to CAS server
+ 
 ## How to connect SAS Viya (CAS) with R SWAT
 #### Assumption
    - Both R (R Computing) and Rstudio is already installed on Client computer
@@ -52,9 +58,9 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
    ```
    install.package('https://github.com/sassoftware/R-swat/releases/download/v1.5.0/R-swat-1.5.0-win64.tar.gz', repos=NULL, type='file')
    ```
-3. Run SAS code to encode your password
+2. Run SAS code to encode your password
    ```
    PROC PWENCODE IN='<your password>';
    RUN;
    ```
-
+3. Make a connection to CAS server
