@@ -9,7 +9,7 @@ _Author: Palawat Supharerk_
 ## Constraints
 Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC which are stardard CAS ports for SWAT connection both Binary Connection and REST Connection Directly to CAS). See also in SAS documenation at https://go.documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/caspg3r/p0paczu3x2qu0wn1p94ees7y5ls8.htm?homeOnFail. Therefore, this PoC will focus on SWAT test on Client side through REST Connection with HTTP Server. SAS Viya uses an HTTP server to proxy requests to services. By default, the HTTP server is configured to use TLS port 443. 
 ## Python Client Computing Environment
-- Python 3.8 (Anaconda) for Windows (64-bit)
+- Python 3.8+ (Anaconda) for Windows (64-bit)
 - JupyterLab 3+
 - swat 1.9.2
 - saspy 3.7.2
@@ -26,7 +26,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 
 ## How to connect SAS Viya (SPRE=SAS Programming Runtime Environment) with SASPy
 #### Assumption
-   - Python (Anaconda) is already installed on Client computer
+   - Python (Anaconda) and JupyterLab packages are already installed on Client computer
 #### Procedures
 1. Open Anaconda Prompt and Install SASPy package on Client computer while connecting to Internet without VPN connection
    ```
