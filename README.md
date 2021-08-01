@@ -28,8 +28,35 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
    - Anaconda Python is already installed on Client computer
 #### Procedures
 1. Open Anaconda Prompt and Install SASPy package on Client computer while connecting to Internet without VPN connection
-2. Configure SASpy
-3. Create Authentication file
+   ```
+   conda install saspy
+   ```
+3. Configure SASpy
+
+   - Goto C:\ProgramData\Anaconda3\envs\py39\Lib\site-packages\saspy\
+   - copy sascfg.py to sascfg_personal.py
+   - Edit sascfg_personal.py by
+    
+       changing
+       ```
+       SAS_config_names=['poc']
+       ```
+       appending
+       ```
+       poc = {'ip'      : 'opcgg100000322.service.gocloud.gov.on.ca',
+              'context' : 'SAS Studio compute context',
+              'authkey' : 'viyaKey',
+              'encoding': 'utf-8',
+              'options' : ["fullstimer", "memsize=2G"]}
+       ```
+4. Create Authentication file (_authinfo) in personal home folder on Client computer
+   ```
+   viyaKey user palawat.supharerk@ontario.ca password <your password>
+   ```
+5. Make a connection to SAS Viya
+   - Connect VPN
+   - Start JupyterLab using Command Prompt
+   - Run Python Notebook
 
 ## How to connect SAS Viya (CAS) with Python SWAT
 #### Assumption
