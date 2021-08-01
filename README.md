@@ -1,8 +1,8 @@
 # Proof of Concept on SAS Viya 3.5
-## Background
-- SASPy (Available for Python only)
+## Solution to integrate R/Python to SAS Viya
+- SASPy (Available for Python only) for SPRE engine and SAS 9.4
   - https://support.sas.com/en/software/saspy.html
-- SWAT (SAS Scripting Wrapper for Analytics Trasfer)
+- SWAT (SAS Scripting Wrapper for Analytics Trasfer) for CAS engine
   - Python https://developer.sas.com/guides/python-swat.html
   - R https://developer.sas.com/guides/r.html
 ## Constraints
