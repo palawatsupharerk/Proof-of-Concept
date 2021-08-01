@@ -60,9 +60,16 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
    ```
 5. Make a connection to SAS Viya
    - Connect VPN
-   - Start JupyterLab using Anaconda Command Prompt, for example if your code located in Network S: Drive
+   - Start JupyterLab using Anaconda Command Prompt,
+    
+     for example,
+     if your code located in Network S: Drive
      ```
      jupyter lab --notebook-dir S:\users\foo\bar
+     ```
+     if your code located in local C: drive
+     ```
+     jupyter lab
      ```
    - Run Python Notebook
 
