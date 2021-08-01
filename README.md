@@ -1,4 +1,5 @@
 # Proof of Concept on SAS Viya 3.5
+## Author: Palawat Supharerk
 ## Solution to integrate R/Python to SAS Viya
 - SASPy (Available for Python only) for SPRE engine and SAS 9.4
   - https://support.sas.com/en/software/saspy.html
@@ -25,11 +26,15 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 
 ## How to connect SAS Viya (SPRE=SAS Programming Runtime Environment) with SASPy
 #### Assumption
-   - Anaconda Python is already installed on Client computer
+   - Python (Anaconda) is already installed on Client computer
 #### Procedures
 1. Open Anaconda Prompt and Install SASPy package on Client computer while connecting to Internet without VPN connection
    ```
    conda install saspy
+   ```
+   or if you use pip command
+   ```
+   pip install saspy
    ```
 3. Configure SASpy
 
@@ -55,7 +60,10 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
    ```
 5. Make a connection to SAS Viya
    - Connect VPN
-   - Start JupyterLab using Command Prompt
+   - Start JupyterLab using Anaconda Command Prompt, for example if your code located in S: Drive
+     ```
+     jupyter lab --notebook-dir S:\Users\DDM\SupharerkP\dBCS
+     ```
    - Run Python Notebook
 
 ## How to connect SAS Viya (CAS) with Python SWAT
