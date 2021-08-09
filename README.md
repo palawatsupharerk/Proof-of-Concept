@@ -12,11 +12,11 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 - Python 3.8+ (Anaconda) for Windows (64-bit)
 - JupyterLab 3+
 - swat 1.9.2
-- saspy 3.7.2
+- saspy 3.7.3
 
 ## R Client Computing Environment
-- R 4.1+ for Windows (64-bit) https://wwww.r-project.org/
-- RStudio 1.4+ for Windows (64-bit) https://www.rstudio,com/
+- R 4.1+ for Windows (64-bit) https://www.r-project.org
+- RStudio 1.4+ for Windows (64-bit) https://www.rstudio.com
 - swat 1.5+
 
 ## Installation
