@@ -1,9 +1,9 @@
 # Proof of Concept on SAS Viya 3.5
 _Author: Palawat Supharerk_
-## Solution to integrate R/Python to SAS Viya
+## Walkthrough for Client R/Python connection to SAS Viya
 - SASPy (Available for Python only) for SPRE engine and SAS 9.4
   - https://support.sas.com/en/software/saspy.html
-- SWAT (SAS Scripting Wrapper for Analytics Trasfer) for CAS engine
+- SWAT (SAS Scripting Wrapper for Analytics Transfer) for CAS engine
   - Python https://developer.sas.com/guides/python-swat.html
   - R https://developer.sas.com/guides/r.html
 ## Constraints
@@ -24,7 +24,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 - Python swat https://sassoftware.github.io/python-swat/install.html
 - R swat https://github.com/sassoftware/R-swat
 
-## How to connect SAS Viya (SPRE=SAS Programming Runtime Environment) with SASPy
+## Scenario 1: How to connect SAS Viya (SPRE=SAS Programming Runtime Environment) with SASPy
 #### Assumption
    - Python (Anaconda) and JupyterLab packages are already installed on Client computer
 #### Procedures
@@ -73,7 +73,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
      ```
    - Run Python Notebook
 
-## How to connect SAS Viya (CAS) with Python SWAT
+## Scenario 2: How to connect SAS Viya (CAS) with Python SWAT
 #### Assumption
    - Anaconda Python is already installed on Client computer
 #### Procedures
@@ -92,7 +92,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
    ```
 3. Make a connection to CAS server
  
-## How to connect SAS Viya (CAS) with R SWAT
+## Scenario 3: How to connect SAS Viya (CAS) with R SWAT
 #### Assumption
    - Both R (R Computing) and Rstudio are already installed on Client computer
 #### Procedures
