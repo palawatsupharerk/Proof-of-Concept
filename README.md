@@ -13,6 +13,7 @@ port 5570 and 8777 are not enabled in PoC which are stardard CAS ports for SWAT 
 ## Python Client Computing Environment
 - Python 3.9.6 (Anaconda) for Windows (64-bit)
 - JupyterLab 3.1.6
+- Jupyter Server 1.10.2
 - swat 1.9.3
 - saspy 3.7.4
 
