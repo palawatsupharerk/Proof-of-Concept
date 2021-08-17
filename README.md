@@ -9,7 +9,7 @@ _Last Update: August 16, 2021_
   - Python https://developer.sas.com/guides/python-swat.html
   - R https://developer.sas.com/guides/r.html
 ## Constraints
-Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC which are stardard CAS ports for SWAT connection both Binary Connection and REST Connection Directly to CAS). See also in SAS documenation at https://go.documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/caspg3r/p0paczu3x2qu0wn1p94ees7y5ls8.htm?homeOnFail. Therefore, this PoC will focus on SWAT test on Client side through REST Connection with HTTP Server. SAS Viya uses an HTTP server to proxy requests to services. By default, the HTTP server is configured to use TLS port 443. 
+port 5570 and 8777 are not enabled in PoC which are stardard CAS ports for SWAT connection through Binary Connection and REST Connection Directly to CAS respectively. See also in SAS documenation at https://go.documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/caspg3r/p0paczu3x2qu0wn1p94ees7y5ls8.htm?homeOnFail. Instead, PoC will focus on SWAT test on Client side through REST Connection with HTTP Proxy Server. SAS Viya uses an HTTP server to proxy requests to services. By default, the HTTP server is configured to use TLS port 443. 
 ## Python Client Computing Environment
 - Python 3.9 (Anaconda) for Windows (64-bit)
 - JupyterLab 3+
@@ -97,11 +97,12 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
 ## Scenario 3: How to connect SAS Viya (CAS) with R SWAT
 #### Assumption
    - Both R (R Computing)(64-bit) and Rstudio (64-bit) are already installed on Client computer
-   - PATH environment variable is updated and point to %R_HOME%\bin\x64
+   - PATH environment variable is updated and pointed to %R_HOME%\bin\x64
 #### Procedures
 1. Open Command Prompt (Admin)
    ```
-   R CMD INSTALL --no-multiarch <full path>/R-swat-1.6.3+vb21030-win-64.tar.gz
+   ren R-swat-1.6.3+vb21030-win-64.tar.gz  R-swat-1.6.3-win64.tar.gz
+   R CMD INSTALL --no-multiarch <full path>/R-swat-1.6.3-win64.tar.gz
    ```
 2. Run SAS code to encode your password
    ```
