@@ -1,5 +1,7 @@
 # Proof of Concept on SAS Viya 3.5
 _Author: Palawat Supharerk_
+
+_Last Update: August 16, 2021_
 ## Walkthrough for Client R/Python connection to SAS Viya
 - SASPy (Available for Python only) for SPRE engine and SAS 9.4
   - https://support.sas.com/en/software/saspy.html
@@ -9,15 +11,15 @@ _Author: Palawat Supharerk_
 ## Constraints
 Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC which are stardard CAS ports for SWAT connection both Binary Connection and REST Connection Directly to CAS). See also in SAS documenation at https://go.documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/caspg3r/p0paczu3x2qu0wn1p94ees7y5ls8.htm?homeOnFail. Therefore, this PoC will focus on SWAT test on Client side through REST Connection with HTTP Server. SAS Viya uses an HTTP server to proxy requests to services. By default, the HTTP server is configured to use TLS port 443. 
 ## Python Client Computing Environment
-- Python 3.8+ (Anaconda) for Windows (64-bit)
+- Python 3.9 (Anaconda) for Windows (64-bit)
 - JupyterLab 3+
-- swat 1.9.2
-- saspy 3.7.3
+- swat 1.9.3
+- saspy 3.7.4
 
 ## R Client Computing Environment
-- R 4.1+ for Windows (64-bit) https://www.r-project.org
-- RStudio 1.4+ for Windows (64-bit) https://www.rstudio.com
-- swat 1.5+
+- R 4.1.1 for Windows (64-bit) https://www.r-project.org
+- RStudio 1.4.1717 for Windows (64-bit) https://www.rstudio.com
+- swat 1.6.3
 
 ## Installation
 - SASPy https://sassoftware.github.io/saspy/install.html#installation
@@ -71,7 +73,7 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
      ```
      jupyter lab
      ```
-   - Run Python Notebook
+   - Run Python Notebook (.ipynb)
 
 ## Scenario 2: How to connect SAS Viya (CAS) with Python SWAT
 #### Assumption
@@ -90,19 +92,20 @@ Due to Security Policy Enforcement, port 5570 and 8777 are prohibitive for PoC w
    PROC PWENCODE IN='<your password>';
    RUN;
    ```
-3. Make a connection to CAS server
+3. Run Python Notebook (.ipynb)
  
 ## Scenario 3: How to connect SAS Viya (CAS) with R SWAT
 #### Assumption
-   - Both R (R Computing) and Rstudio are already installed on Client computer
+   - Both R (R Computing)(64-bit) and Rstudio (64-bit) are already installed on Client computer
+   - PATH environment variable is updated and point to %R_HOME%\bin\x64
 #### Procedures
-1. Open RStudio and Install SWAT package
+1. Open Command Prompt (Admin)
    ```
-   install.package('https://github.com/sassoftware/R-swat/releases/download/v1.5.0/R-swat-1.5.0-win64.tar.gz', repos=NULL, type='file')
+   R CMD INSTALL --no-multiarch <full path>/R-swat-1.6.3+vb21030-win-64.tar.gz
    ```
 2. Run SAS code to encode your password
    ```
    PROC PWENCODE IN='<your password>';
    RUN;
    ```
-3. Make a connection to CAS server
+3. Run R Notebook (.Rmd)
