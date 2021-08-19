@@ -1,7 +1,7 @@
 # Proof of Concept on SAS Viya 3.5
 _Author: Palawat Supharerk_
 
-_Last Update: August 16, 2021_
+_Last Update: August 19, 2021_
 ## Walkthrough for Client R/Python connection to SAS Viya
 - SASPy (Available for Python only) for SPRE engine and SAS 9.4
   - https://support.sas.com/en/software/saspy.html
@@ -88,7 +88,13 @@ port 5570 and 8777 are not enabled in PoC which are stardard CAS ports for SWAT 
    ```
    pip install swat
    ```
-2. Run SAS code to encode your password
+2. Obtain server certificate file (.pem) from your SAS Viya Administrator and copy to your personal home folder on local laptop
+3. Set the following environment variable programmatically in Python code
+   ```
+   os.environ['CAS_CLIENT_SSL_CA_LIST'] = 'C:/Users/FooBar/<certificate file name>.pem'
+   ```
+
+4. Run SAS code to encode your password
    ```
    PROC PWENCODE IN='<your password>';
    RUN;
@@ -105,7 +111,13 @@ port 5570 and 8777 are not enabled in PoC which are stardard CAS ports for SWAT 
    ren R-swat-1.6.3+vb21030-win-64.tar.gz  R-swat-1.6.3-win64.tar.gz
    R CMD INSTALL --no-multiarch <full path>/R-swat-1.6.3-win64.tar.gz
    ```
-2. Run SAS code to encode your password
+2. Obtain server certificate file (.pem) from your SAS Viya Administrator and copy to your personal home folder on local laptop
+3. Set the following environment variable programmatically in R code
+   ```
+   Sys.setenv(CAS_CLIENT_SSL_CA_LIST = 'C:/Users/FooBar/<certificate file name>.pem')
+   ```
+
+4. Run SAS code to encode your password
    ```
    PROC PWENCODE IN='<your password>';
    RUN;
